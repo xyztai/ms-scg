@@ -15,7 +15,7 @@ import reactor.core.publisher.Mono;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.m.platform.gateway.constant.GatewayConst.TRACE_ID;
+import static org.m.platform.gateway.constant.GatewayConst.M_TRACE_ID;
 
 /**
  * @Author tai
@@ -40,7 +40,7 @@ public class RequestLogFilter implements GlobalFilter, Ordered {
         reqArgs.add(requestMethod);
         String requestUrl = exchange.getRequest().getURI().getRawPath();
         reqArgs.add(requestUrl);
-        String traceId = exchange.getRequest().getHeaders().getFirst(TRACE_ID);
+        String traceId = exchange.getRequest().getHeaders().getFirst(M_TRACE_ID);
         reqArgs.add(traceId);
         // 请求头
         HttpHeaders headers = exchange.getRequest().getHeaders();

@@ -46,3 +46,8 @@ logging:
   level:
     org.springframework.cloud.gateway: debug
 
+my:
+  request:
+    trace: true
+    ip: true
+    if-use-black-list: true
